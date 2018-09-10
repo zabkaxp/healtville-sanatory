@@ -2,7 +2,7 @@
 <img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/background-single.jpg" class="header__background--single" width="100%" >
 
    </header>
-    <main class="single-post">
+    <main class="single--post">
 
             <?php while(have_posts()){
                 the_post(); ?>
@@ -10,3 +10,5 @@
                 <?php the_content();  } ?>
     </main>
 <?php get_footer(); ?>
+
+

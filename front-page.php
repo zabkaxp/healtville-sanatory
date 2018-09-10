@@ -10,41 +10,53 @@
       <section class="news">
          
           <article class="news__events"><span class="heading-one">Upcoming Events</span>
+             <?php
+          $homepageEvents = new WP_Query(array(
+            'posts_per_page' => 2,
+            'post_type' => 'event'
+          ));
+
+          while ($homepageEvents->have_posts()) {
+            $homepageEvents->the_post(); ?>
+          
+
               <div class="news__events--summary">
-                  <div class="date date--events"><span>SEP</span><span class="bold"><br>10</span></div>
+                  <a href="<?php the_permalink(); ?>" class="date date--events"><span><?php the_time('M'); ?></span><span class="bold"><br><?php the_time('d'); ?></span></a>
                   <div class="events-info">
-                      <a href="#" class="events-info__title">Meeting with Dr. Amaroku Akahoma</a>
-                      <span class="events-info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...  <a href="#">  Read more &rarr;</a></span>
+                      <a href="<?php the_permalink(); ?>" class="events-info__title"><?php the_title(); ?></a>
+                      <span class="events-info__description"><?php if (has_excerpt()) {
+                            echo get_the_excerpt();
+                            } else {
+                            echo wp_trim_words(get_the_content(), 18);} ?>
+                            <a href="<?php the_permalink(); ?>">  Read more &rarr;</a></span>
                   </div>  
               </div>
-               <div class="news__events--summary">
-                  <div class="date date--events"><span>NOV</span><span class="bold"><br>15</span></div>
-                  <div class="events-info">
-                      <a href="#" class="events-info__title">Yoga session wit Ms. Mary Omoka</a>
-                      <span class="events-info__description">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...  <a href="#">  Read more &rarr;</a></span>
-                   </div>
-              </div>
+             
+              <?php } wp_reset_postdata();        ?>  
+              
               <div class="btn--box">
-                <a href="#" class="btn btn--green">View All Events</a>
+                <a href="" class="btn btn--green">View All Events</a>
               </div>
          </article>
-         <article class="news__blog"><span class="heading-one">From Our Blogs</span>
-             <div class="news__events--summary">
-                  <div class="date date--blog"><span>SEP</span><span class="bold"><br>10</span></div>
+                  <article class="news__blog"><span class="heading-one">From Our Blogs</span>
+             
+         <?php 
+          $homepagePosts = new WP_Query(array(
+            'posts_per_page' => 2
+          ));
+          while($homepagePosts->have_posts()){
+            $homepagePosts->the_post();?>
+
+                    <div class="news__events--summary">
+                  <a href="<?php the_permalink(); ?>" class="date date--blog"><span><?php the_time('M'); ?></span><span class="bold"><br><?php the_time('d'); ?></span></a>
                   <div class="events-info">
-                      <a href="#" class="events-info__title">Meeting with Dr. Amaroku Akahoma</a>
-                      <span class="events-info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...  <a href="#">  Read more &rarr;</a></span>
+                      <a href="<?php the_permalink(); ?>" class="events-info__title"><?php the_title(); ?></a>
+                      <span class="events-info__description"><?php echo wp_trim_words(get_the_content(), 18);?><a href="<?php the_permalink(); ?>">Read more &rarr;</a></span>
                   </div>  
               </div>
-               <div class="news__events--summary">
-                  <div class="date date--blog"><span>NOV</span><span class="bold"><br>15</span></div>
-                  <div class="events-info">
-                      <a href="#" class="events-info__title">Yoga session wit Ms. Mary Omoka</a>
-                      <span class="events-info__description">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...  <a href="#">  Read more &rarr;</a></span>
-                   </div>
-              </div>
-              <div class="btn--box">
-                <a href="#" class="btn btn--grey">View All Blog Posts</a>
+            <?php } wp_reset_postdata();        ?>  
+             <div class="btn--box">
+                <a href="<?php echo site_url('blog');?> " class="btn btn--grey">View All Blog Posts</a>
               </div>
          </article>
       </section>

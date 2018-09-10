@@ -1,5 +1,5 @@
 /*
-	Theme name: healthville-sanatory
+	Theme name: Yankee Candle Platform
 	Author:Marta
 	Version:1.0
 	*/
@@ -30,7 +30,8 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow-x: hidden; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -54,6 +55,25 @@ body {
   .btn--grey {
     background-color: var(--grey-primary);
     color: white; }
+
+.blog-post {
+  padding: 4rem 5rem;
+  margin: 4rem 11rem;
+  box-shadow: 10px 10px 6px -6px #777;
+  line-height: 2.2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  border: .1px solid #777; }
+
+.blog-header {
+  padding-bottom: 2rem; }
+
+.blog-post-details {
+  padding: 1rem;
+  font-weight: 700; }
+
+.single--post {
+  padding: 5rem 10rem; }
 
 footer {
   background-color: var(--green-light);
@@ -83,23 +103,20 @@ footer {
   color: var(--green-dark);
   padding: .7rem 0; }
 
-
 .header__background {
-position: relative;
+  position: relative;
   z-index: -1000;
   width: 100%;
   height: 87.8vh;
   background-attachment: fixed;
-  filter: blur(2px); 
-   }
+  filter: blur(2px); }
 
-.header__background--single{     
-        position:relative;
-        z-index:-10;
-        width:100vw; 
-        background-attachment: fixed;   	
-        filter:brightness(.4);
-    }
+.header__background--single {
+  position: relative;
+  z-index: -10;
+  width: 100vw;
+  background-attachment: fixed;
+  filter: brightness(0.4); }
 
 .nav-list {
   display: flex;
@@ -188,26 +205,3 @@ position: relative;
   .events-info__description {
     margin-top: 3rem;
     font-size: 1.6rem; }
-
-.blog-post{
-    padding:3rem 4rem;
-    margin:4rem 11rem;
-    background-color: var(--green-light);
-    box-shadow: 10px 10px 6px -6px #777;
-    line-height:2.2rem;
-    font-size: 1.6rem;
-    font-family: inherit;
-
-}
-.blog-header{
-    padding-bottom: 2rem;    
-}
-.blog-post-details{
-    padding: 1rem;
-    font-weight: 700;
-}
-
-.single-post{
-    padding: 5rem 10rem;
-    
-}
