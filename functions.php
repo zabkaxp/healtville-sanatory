@@ -11,3 +11,24 @@ function sanatory_features(){
 	add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'sanatory_features');	
+
+
+function sanatory_adjust_queries($query){
+      if(!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()){
+          $query->set('meta_key', 'date');
+          $query->set('orderby', 'meta_value_num');
+          $query->set('order', 'ASC');
+          $query->set('meta_query', array(
+              array(
+                'key' => 'date',
+                'compare'=> '>=',
+                'value'=> date('Ymd'),
+                'type'=> 'numeric'
+            )
+          )
+                     );}}
+      
+
+
+add_action('pre_get_posts', 'sanatory_adjust_queries');
+
