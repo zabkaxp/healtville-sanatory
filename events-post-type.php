@@ -29,5 +29,17 @@ function sanatory_post_types(){
       'singular_name' => 'Treatment'   ),
     'menu_icon' => 'dashicons-awards'  ));
 
+    
+     register_post_type('doctor', array(
+    'supports' => array('title', 'editor', 'thumbnail'),
+    'public' => true,
+    'labels' => array(
+      'name' => 'Doctors',
+      'add_new_item' => 'Add New Doctor',
+      'edit_item' => 'Edit Doctor',
+      'all_items' => 'All Doctors',
+      'singular_name' => 'Doctor'   ),
+    'menu_icon' => 'dashicons-awards'  ));
+
 }
 add_action('init', 'sanatory_post_types'); 

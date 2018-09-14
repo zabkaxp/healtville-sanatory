@@ -9,7 +9,10 @@ add_action('wp_enqueue_scripts', 'sanatory_files');
 
 function sanatory_features(){
 	add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_image_size('doctorPortrait', 480, 650, true);
 }
+
 add_action('after_setup_theme', 'sanatory_features');	
 
 
@@ -26,9 +29,15 @@ function sanatory_adjust_queries($query){
                 'type'=> 'numeric'
             )
           )
-                     );}}
-      
+      );}
 
+    if(!is_admin() AND is_post_type_archive('treatment') AND $query->is_main_query()){
+      $query->set('orderby', 'title');
+      $query->set('posts_per_page', -1);
+    $query->set('order', 'ASC');
+    }
+
+}
 
 add_action('pre_get_posts', 'sanatory_adjust_queries');
 
