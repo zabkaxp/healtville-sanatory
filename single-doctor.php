@@ -1,6 +1,7 @@
 <?php get_header(); ?>
-<img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/background-single.jpg" class="header__background--single" width="100%" >
-
+<div><?php the_field('page_banner_subtitle');?>
+  <div class="page-banner__bg-image" style="background-image: url(<?php $pageBannerImage = get_field('page_banner_background_image'); echo $pageBannerImage['sizes']['pageBanner']; ?>);"></div>
+      </div>
    </header>
     <main class="single--post">
         

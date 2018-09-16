@@ -35,8 +35,7 @@
         echo '<h2> '.get_the_title() . ' Doctors</h2>';
         while($relatedProfessors->have_posts()) {
           $relatedProfessors->the_post(); ?>
-        <li><a href="<?php the_permalink();?>"><div><?php the_post_thumbnail('doctorPortrait');?></div><?php the_title();?></a></li> <?php }     }
-                  wp_reset_postdata(); 
+        <li><a href="<?php the_permalink();?>"><div><?php the_post_thumbnail('doctorPortrait');?></div><?php the_title();?></a></li> <?php }     }                  wp_reset_postdata(); 
 
 
         $homepageEvents = new WP_Query(array(
@@ -60,34 +59,31 @@
         
       
         
-             if ($homepageEvents->have_posts()) {
-                echo '<h2>Upcoming ' . get_the_title() . ' Events</h2>'; 
+           if ($homepageEvents->have_posts()) {
+                echo '<h2>Upcoming ' . get_the_title() . ' Events</h2>'; }
                 
                  while($homepageEvents->have_posts()) {
                     $homepageEvents->the_post(); ?>
                      
                  <div class="news__events--summary">
-                  <a href="<?php the_permalink(); ?>" class="date date--events"><span><?php
-                      $eventDate = new DateTime(get_field('date')); 
-                      echo $eventDate->format('M')?>
-              </span><span class="bold"><br><?php echo $eventDate->format('d'); ?></span></a>
-                  <div class="events-info">
+                  
                       <a href="<?php the_permalink(); ?>" class="events-info__title"><?php the_title(); ?></a>
-                      <span class="events-info__description"><?php if (has_excerpt()) {
-                            echo get_the_excerpt();
-                            } else {
-                            echo wp_trim_words(get_the_content(), 18);} ?>
-                            <a href="<?php the_permalink(); ?>">  Read more &rarr;</a></span>
-                  </div>  
-              </div>                                        
-                                                                      
-                                                                      
-             <?php }}
-        
-         wp_reset_postdata();        ?>  
-              
-        
-        
+                      
+                           
+                     </div>
+                                                     
+                     <?php 
+                      wp_reset_postdata();
+        $relatedCampuses = get_field('programs');
+                                if($relatedCampuses){
+                                  echo get_the_title() .' is available at these campuses:';
+                                  foreach ($relatedCampuses as 
+                                          $campus){ ?>
+                      <a href="<?php echo get_the_permalink($campus);?>"><?php echo get_the_title($campus);?></a>
+                      <?php }}}
+    
+                                     ?>                   
+            
     </main>
 <?php get_footer(); ?>
 

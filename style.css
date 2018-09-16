@@ -58,7 +58,7 @@ body {
 
 .blog-post {
   padding: 4rem 5rem;
-  margin: 4rem 11rem;
+  margin: 6rem 11rem;
   box-shadow: 10px 10px 6px -6px #777;
   line-height: 2.2rem;
   font-size: 1.6rem;
@@ -157,6 +157,16 @@ footer {
   top: 15.6rem;
   width: 64.5rem;
   z-index: 49; }
+
+.page-banner__bg-image {
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: -300; }
 
 .slider-img {
   width: 100%; }
