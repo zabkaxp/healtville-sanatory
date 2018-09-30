@@ -17,13 +17,13 @@
         
       <nav class="main-nav">
          <ul class="nav-list">
-            <li><a href="<?php echo site_url('/about-us')?>">About Us</a></li>
-            <li><a href="<?php echo site_url('/treatments')?>">Treatments</a></li>
-            <li><a href="<?php echo site_url('/events')?>">Events</a></li>
-             <li class="header__logo--li" ><a href="<?php echo site_url()?>"><img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/logo.png" alt="logo" class="header__logo"></a></li>
-            <li><a href="<?php echo site_url('/blog')?>">Blog</a></li>
-            <li><a href="<?php echo site_url('/my-account')?>">My account</a></li>
-            <li><a href="<?php echo site_url('/search')?>">Search</a></li>
+            <a href="<?php echo site_url('/about-us')?>"><li>About Us</li></a>
+            <a href="<?php echo site_url('/treatments')?>"><li>Treatments</li></a>
+            <a href="<?php echo site_url('/events')?>"><li>Events</li></a>
+            <a href="<?php echo site_url()?>"><li class="header__logo--li" ><img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/logo.png" alt="logo" class="header__logo"></li></a>
+            <a href="<?php echo site_url('/blog')?>"><li>Blog</li></a>
+            <a href="<?php echo site_url('/my-account')?>"><li>My account</li></a>
+            <li class="search-trigger">Search</li>
          </ul>
       </nav>
      

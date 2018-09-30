@@ -137,7 +137,11 @@ footer {
     padding-top: 2.5rem; }
     .nav-list > *:hover {
       background-color: var(--green-light);
-      cursor: pointer; }
+      cursor: pointer;
+      color: #1e631b; }
+    .nav-list > *:link, .nav-list > *:visited, .nav-list > *:active {
+      text-decoration: none;
+      color: #1e631b; }
 
 .header__logo {
   z-index: 100;
@@ -146,7 +150,11 @@ footer {
   background-color: white;
   -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 50% 100%, 0 50%);
   clip-path: polygon(0% 0%, 100% 0, 100% 50%, 50% 100%, 0 50%);
-  border: 1px solid lightgreen; }
+  border: 1px solid lightgreen;
+  transition: 0.5s;
+  transform: translateY(-30px); }
+  .header__logo:hover {
+    transform: translateY(-10px); }
   .header__logo--li {
     padding: 0;
     padding-top: 2rem; }
@@ -170,6 +178,71 @@ footer {
 
 .slider-img {
   width: 100%; }
+
+.search-overlay {
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 110;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(1.09);
+  transform: scale(1.09);
+  transition: opacity .3s, visibility .3s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility .3s;
+  transition: opacity .3s, transform .3s, visibility .3s, -webkit-transform .3s;
+  box-sizing: border-box; }
+
+.search-overlay--active {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1); }
+
+.search-overlay__top {
+  background-color: rgba(0, 0, 0, 0.12);
+  margin-top: 30px; }
+
+.search-term {
+  width: 75%;
+  box-sizing: border-box;
+  border: none;
+  padding: 15px 20px;
+  margin: 0;
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 300;
+  outline: none;
+  color: #F95738; }
+
+.search-overlay__close {
+  position: absolute;
+  top: 45px;
+  right: 16px;
+  font-size: 2.1rem;
+  cursor: pointer;
+  transition: all .3s;
+  background-color: #FFF;
+  color: #F95738;
+  line-height: .7; }
+
+.body-no-scroll {
+  overflow: hidden; }
+
+.spinner-loader {
+  margin-top: 45px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 0.25rem solid rgba(0, 0, 0, 0.2);
+  border-top-color: black;
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear; }
 
 .news {
   display: flex;

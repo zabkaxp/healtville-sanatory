@@ -29,6 +29,18 @@
         &copy;Copyright Marta Wojno
        </div>
    </footer>
+<div class="search-overlay">
+    <div class="search-overlay__top">
+        <div class="container">
+            <input type="text" class="search-term" id="search-term" placeholder="What are you looking for?">
+            <div class="search-overlay__close">X</div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="search-overlay__results"></div>
+    </div>
+</div>
+   
    <?php wp_footer(); ?>  
 </body>
 </html>
