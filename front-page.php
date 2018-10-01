@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
-     <img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/background.jpg" class="header__background" height="100">
+     <img src="http://healthvillesanatory1.local/wp-content/themes/healthville-sanatory/images/background.jpg" class="header__background" height="100">
    </header>
       
 
    <main>
-    <img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/retired-couple.png" alt="retired couple" class="couple-img">
+    <img src="http://healthvillesanatory1.local/wp-content/themes/healthville-sanatory/images/retired-couple.png" alt="retired couple" class="couple-img">
 
       <section class="news">
          
@@ -75,9 +75,9 @@
       </section>
       <section>
          <div class="main-slider">
-              <div><img class="slider-img" src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/slider1.jpg"></div>   
-              <div><img class="slider-img" src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/slider2.jpg"></div>   
-              <div><img class="slider-img" src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/slider3.jpg"></div>
+              <div><img class="slider-img" src="http://healthvillesanatory1.local/wp-content/themes/healthville-sanatory/images/slider1.jpg"></div>   
+              <div><img class="slider-img" src="http://healthvillesanatory1.local/wp-content/themes/healthville-sanatory/images/slider2.jpg"></div>   
+              <div><img class="slider-img" src="http://healthvillesanatory1.local/wp-content/themes/healthville-sanatory/images/slider3.jpg"></div>
              
               
           </div>

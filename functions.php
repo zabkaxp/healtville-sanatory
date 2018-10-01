@@ -4,6 +4,8 @@ function sanatory_files(){
     wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400,700');
     wp_enqueue_script('main-sanatory-js', get_theme_file_uri('/js/scripts.js'), array('jquery'), 1.0, true);
     wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=AIzaSyDq3IY3tJQltQM4-Q84uT2qOHGNqrQaDeM', NULL, '1.0', true); 
+    wp_localize_script('main-sanatory-js', 'sanatoryData', array('root_url'=> get_site_url() ));
+
 }
 
 add_action('wp_enqueue_scripts', 'sanatory_files'); 
@@ -47,5 +49,12 @@ function sanatoryMapKey($api){
   $api['key']='AIzaSyDq3IY3tJQltQM4-Q84uT2qOHGNqrQaDeM';
   return $api;}
 
-add_filter('acf/fields/google_map/api','sanatoryMapKey');
+add_filter('acf/fields/google_map/api','sanatoryMapKey');\
+    
+function sanatory_custom_rest() {
+  register_rest_field('post', 'authorName', array(
+    'get_callback' => function() {return get_the_author();}  ));}
+
+add_action('rest_api_init', 'sanatory_custom_rest'); 
+
 

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/background-single.jpg" class="header__background--single" width="100%" >
+<img src="http://healthvillesanatory1.local/wp-content/themes/healthville-sanatory/images/background-single.jpg" class="header__background--single" width="100%" >
 
    </header>
     <main class="single--post">

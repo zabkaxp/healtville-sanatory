@@ -1,6 +1,6 @@
    <footer>
       <div class=footer__box>
-       <div class="footer__logo"><img src="http://healthville-sanatory.local/wp-content/themes/healthville-sanatory/images/logo.png" alt="logo">
+       <div class="footer__logo"><img src="http://healthvillesanatory1.local/wp-content/themes/healthville-sanatory/images/logo.png" alt="logo">
        </div>
         <div class="footer__info">
             <ul class="footer--list"><span class="footer--header">What we do</span>
